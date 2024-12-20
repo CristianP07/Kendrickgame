@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rap Race</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+      <div class="track-container">
+        <div class="track">
+          <div class="racer" id="kendrick">
+              <img src="kendrick.png" alt="Kendrick Lamar">
+          </div>
+          <div class="racer" id="drake">
+              <img src="drake.png" alt="Drake">
+          </div>
+           <div class="finish-line">
+              <img src="goat.png" alt="GOAT">
+           </div>
+        </div>
+       </div>
+        <div class="level-info">
+          <p>Level: <span id="level">1</span></p>
+          <p>Clicks: <span id="clicks">0</span></p>
+        </div>
+          <div class="winner-message" id="winnerMessage"></div>
+        <div class="countdown" id="countdown"></div>
+           <div class="run-text" id="runText"></div>
+    </div>
+    <div class="confetti-container"></div>
+    <audio id="winSound1" src="win1.wav"></audio>
+     <audio id="winSound2" src="win2.wav"></audio>
+      <audio id="winSound3" src="win3.wav"></audio>
+   <audio id="loseSound1" src="lose1.wav"></audio>
+  <audio id="loseSound2" src="lose2.wav"></audio>
+  <audio id="loseSound3" src="lose3.wav"></audio>
+   <audio id="backgroundMusic" src="background.wav" loop></audio>
+   <audio id="countdownSound" src="countdown.wav"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

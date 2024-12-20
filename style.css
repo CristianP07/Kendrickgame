@@ -1,0 +1,173 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #222;
+    overflow: hidden;
+}
+.game-container {
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+}
+.track-container {
+  width: 100%;
+  overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+}
+.track {
+    width: 100%;
+     display: grid;
+     grid-template-columns: repeat(100, 1fr);
+     grid-template-rows: repeat(10, 1fr);
+    height: 500px;
+    cursor: pointer;
+}
+
+.track::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+    to bottom,
+    #9A544C,
+    #9A544C 49px,
+     white 1px,
+    transparent 1px,
+    transparent 50px
+);
+}
+.racer {
+    position: absolute;
+    height: 70px;
+    width: auto;
+    transition: left 0.1s linear;
+     z-index: 2;
+}
+
+.racer img {
+    height: 100%;
+    width: auto;
+}
+#kendrick {
+     left: 10px;
+     grid-row: 4;
+    align-self: center;
+}
+#drake {
+    left: 10px;
+     grid-row: 6;
+   align-self: center;
+}
+.finish-line {
+   position: absolute;
+     right: 0;
+     top: 0;
+     height: 100%;
+     width: 1fr;
+     display: flex;
+    align-items: center;
+     justify-content: center;
+     z-index: 2;
+}
+.finish-line::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+     width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+  to right,
+    #9A544C,
+    #9A544C 98%,
+    white 1px,
+    transparent 1px,
+   transparent 100%
+);
+   }
+
+.finish-line img {
+    height: 100px;
+    width: auto;
+
+}
+.level-info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2em;
+    color: white;
+}
+.winner-message {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 100;
+}
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: -10px;
+    animation: confetti-fall 5s linear infinite;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+.countdown {
+  font-size: 4em;
+  color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
+}
+.run-text{
+  font-size: 5em;
+  color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    transform: translateY(-50%);
+  white-space: nowrap;
+    animation: run-animation 1s linear forwards;
+      font-family: 'Arial Black', sans-serif;
+      z-index: 101;
+}
+ @keyframes run-animation {
+    from{
+        left: -100%;
+      }
+    to {
+         left: 50%;
+    transform: translate(-50%,-50%);
+    }
+}
